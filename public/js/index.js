@@ -1,5 +1,6 @@
 const apps = [
-  {id: 0, folderName: "share-position", name: "Share Position", img: ""}
+  {id: 0, folderName: "share-position", name: "Share Position", img: ""},
+  {id: 1, folderName: "unit-conversor", name: "Unit Conversor", img: ""}
 ];
 
 let limit = 9;
@@ -64,5 +65,15 @@ document.getElementById("input-search").addEventListener("keyup", (e) => {
     getApps();
   } else {
     getSearchResult(text);
+  }
+});
+
+document.getElementById("btn-menu").addEventListener("click", () => {
+  document.getElementById("slider-container").style.left = 0;
+});
+
+document.getElementById("slider-container").addEventListener("click", e => {
+  if(e.target.id === "slider-container") {
+    document.getElementById("slider-container").style.left = "-100%";
   }
 });
