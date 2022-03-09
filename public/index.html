@@ -12,16 +12,18 @@
   <header>
     <div id="form-search">
       <div id="input-container">
-        <input id="input-search" type="search" placeholder="Procurar aplicativos" />
+        <input id="input-search" type="search" placeholder="Pesquisar jogos e apps" />
+        <img src="assets/img/filter-solid.svg" width="20" height="20" alt="bars" id="btn-filter">
         <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
       </div>
-      <nav>
-        <span>Todos</span>
-        <span>Produtividade</span>
-        <span>Utilitários</span>
-        <span>Entretenimento</span>
-      </nav>
     </div>
+    <nav id="nav">
+      <span>Todos</span>
+      <span>Produtividade</span>
+      <span>Utilitários</span>
+      <span>Entretenimento</span>
+      <span>Saúde</span>
+    </nav>
   </header>
 
   <main>  
@@ -29,11 +31,22 @@
     <button id="btn-more">Mais</button> 
   </main>
 
+  <div id="bottom-navigation">
+    <div class="tab" id="tab-1">
+      <img src="assets/img/gamepad-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-1">
+      <span class="label" id="label-tab-1">Jogos</span>
+    </div>
+    <div class="tab" id="tab-2">
+      <img src="assets/img/square-root-alt-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-2">
+      <span class="label" id="label-tab-2">Apps</span>
+    </div>
+  </div>
+
   <div id="slider-container">
     <div id="slider">
       <p id="title">Cloudapps</p>
       <div id="links-1" class="links">
-        <a href="#"><img src="assets/img/home-solid.svg" alt=""><span>Página inicial</span></a>
+        <a href="/"><img src="assets/img/home-solid.svg" alt=""><span>Página inicial</span></a>
         <a href="#"><img src="assets/img/plus-solid.svg" alt=""><span>Submeter aplicativo</span></a>
         <a href="#"><img src="assets/img/heart.svg" alt=""><span>Doar</span></a>
       </div>

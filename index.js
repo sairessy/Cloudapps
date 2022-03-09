@@ -12,3 +12,7 @@ app.listen(5000, () => {
 app.get("/app/0", (req, res) => {
   res.json({});
 });
+
+app.get("/app/1", (req, res) => {
+  res.sendFile(__dirname + "/public/apps/imc-calculator-1/index.html");
+});

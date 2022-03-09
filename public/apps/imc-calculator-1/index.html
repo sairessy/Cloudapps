@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC Calculator</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    input, button, select {
+      padding: 15px;
+      margin-bottom: 5px;
+      border: 1px solid #eee;
+      outline: none;
+      border-radius: 3px;
+    }
+    select {
+      background-color: #eee;
+    }
+    button {
+      background-color: indigo;
+      color: #fff;
+      border: none;
+    }
+
+    button:active {
+      opacity: .8;
+    }
+
+    p {
+      font-family: arial;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <form id="form">
+    <select id="select-gender">
+      <option value="">Seleccionar sexo</option>
+      <option value="0">Masculino</option>
+      <option value="1">Feminino</option>
+    </select>
+    <input type="number" id="age" placeholder="Idade (anos)" required>
+    <input type="number" id="height" placeholder="Altura (cm)" required>
+    <input type="number" id="mass" placeholder="Massa (kg)" required>
+    <button>Calcular</button>
+    <p id="calculation"></p>
+  </form>
+</body>
+
+<script>
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    const gender = document.getElementById("select-gender").value;
+    
+    if(gender === "") {
+      alert("Seleccione o sexo!");
+      return;
+    }
+
+    const age = document.getElementById("age").value;
+    const height = document.getElementById("height").value;
+    const mass = document.getElementById("mass").value;
+    const imc = Math.round(mass / (age * height));
+    document.getElementById("calculation").innerHTML = `O seu índice de massa corporal é de ${imc} kg/m3`;
+  })
+</script>
+</html>

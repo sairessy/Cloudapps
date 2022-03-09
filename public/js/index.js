@@ -1,24 +1,27 @@
+const config = {
+  colors: {
+    primary: "indigo"
+  }
+}
+
+const type = null;
+
 const apps = [
-  {id: 0, folderName: "qr-code-scanner-0", name: "QR Code Scanner", img: ""},
+  {id: 0, type: "app", category: 0, folderName: "qr-code-scanner-0", name: "QR Code Scanner", img: ""},
+  {id: 1, type: "app", category: 0, folderName: "imc-calculator-1", name: "IMC Calculator", img: ""},
 ];
 
 let limit = 9;
 const limitIncrement = limit;
 
-const openUrl = (id) => {
-  window.location.href = `/app/${id}`;
-}
-
 const App = (id, name, img) => {
   const _img = img == "" ? "assets/img/image-solid.svg" : img; 
 
   return(`
-    <div class="app">
-      <div class="cover" style='background-image: url(${_img})' 
-        onClick='openUrl(${id});'
-      ></div>
+    <a href="/app/${id}" target="" class="app">
+      <div class="cover" style='background-image: url(${_img})'></div>
       <p>${name}</p>
-    </div>
+    </a>
   `);
 }
 
@@ -69,9 +72,13 @@ document.getElementById("input-search").addEventListener("keyup", (e) => {
 
 document.getElementById("btn-menu").addEventListener("click", () => {
   $("#slider-container").fadeIn()
-  $("#slider").animate({left: "0"}, 500, ()=> {
-    // $("#slider-container").css({"background-color": "#0000007c"});
-  });
+  $("#slider").animate({left: "0"}, 500);
+});
+
+let navShown = false;
+$("#btn-filter").click(() => {
+  navShown = !navShown;
+  $("nav").css({display: navShown ? "flex" : "none"});
 });
 
 document.getElementById("slider-container").addEventListener("click", e => {
@@ -79,5 +86,16 @@ document.getElementById("slider-container").addEventListener("click", e => {
     $("#slider-container").fadeOut(700);
     $("#slider").animate({left: "-75%"}, 500, ()=> {
     });
+  }
+});
+
+$(".tab").click((e) => {
+  const id = e.target.id;
+  if(["tab-1", "icon-tab-1", "label-tab-1"].includes(id)) {
+    $("#label-tab-2").css({"color": "#000000"})
+    $("#label-tab-1").css({"color": config.colors.primary})
+  } else {
+    $("#label-tab-1").css({"color": "#000000"})
+    $("#label-tab-2").css({"color": config.colors.primary})
   }
 });
