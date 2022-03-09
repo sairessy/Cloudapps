@@ -82,7 +82,7 @@ document.getElementById("btn-menu").addEventListener("click", () => {
   $("#slider").animate({left: "0"}, 500);
 });
 
-let navShown = false;
+let navShown = true;
 $("#btn-filter").click(() => {
   navShown = !navShown;
   $("nav").css({display: navShown ? "flex" : "none"});

@@ -1,0 +1,14 @@
+@font-face {
+  src: url(../assets/fonts/RobotoCondensed-Regular.ttf);
+  font-family: rbt;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: rbt;
+}
+
+a {
+  text-decoration: none;
+}

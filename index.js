@@ -6,7 +6,13 @@ app.listen(5000, () => {
 });
 
 // Main App
+app.get("/submitappguide", (req, res) => {
+  res.sendFile(__dirname + "/public/submit-app-guide.html");
+});
 
+app.get("/submitapp", (req, res) => {
+  res.sendFile(__dirname + "/public/submit-app.html");
+});
 
 // Apps
 app.get("/app/0", (req, res) => {

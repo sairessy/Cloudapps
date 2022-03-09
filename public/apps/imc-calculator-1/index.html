@@ -41,14 +41,8 @@
 </head>
 <body>
   <form id="form">
-    <select id="select-gender">
-      <option value="">Seleccionar sexo</option>
-      <option value="0">Masculino</option>
-      <option value="1">Feminino</option>
-    </select>
-    <input type="number" id="age" placeholder="Idade (anos)" required>
-    <input type="number" id="height" placeholder="Altura (cm)" required>
-    <input type="number" id="mass" placeholder="Massa (kg)" required>
+    <input type="text" id="height" placeholder="Altura (m)" required>
+    <input type="number"  id="mass" placeholder="Massa (kg)" required>
     <button>Calcular</button>
     <p id="calculation"></p>
   </form>
@@ -57,18 +51,27 @@
 <script>
   document.getElementById("form").addEventListener("submit", e => {
     e.preventDefault();
-    const gender = document.getElementById("select-gender").value;
-    
-    if(gender === "") {
-      alert("Seleccione o sexo!");
-      return;
-    }
-
-    const age = document.getElementById("age").value;
     const height = document.getElementById("height").value;
     const mass = document.getElementById("mass").value;
-    const imc = Math.round(mass / (age * height));
-    document.getElementById("calculation").innerHTML = `O seu índice de massa corporal é de ${imc} kg/m3`;
-  })
+    const imc = (mass / (height *height)).toFixed(2);
+    let imcType = "";
+    if(imc < 17) {
+      imcType = "Muito abaixo do peso";
+    } else if (imc > 17 && imc < 18.49) {
+      imcType = "Abaixo do peso";
+    } else if(imc > 18.50 && imc < 24.99) {
+      imcType = "Peso normal";
+    } else if(imc > 25 && imc < 29.99) {
+      imcType = "Acima do peso";
+    } else if(imc > 30 && imc < 34.99) {
+      imcType = "Obesidade I";
+    } else if(imc > 35 && imc < 39.99) {
+      imcType = "Obesidade II";
+    } else if( imc > 40) {
+      imcType = "Obesidade III";
+    }
+
+    document.getElementById("calculation").innerHTML = `O seu índice de massa corporal é de ${imc} kg/m3 (${imcType})`;
+  });
 </script>
 </html>
