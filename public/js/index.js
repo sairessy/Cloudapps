@@ -1,6 +1,6 @@
 const config = {
   colors: {
-    primary: "indigo"
+    primary: "#000"
   }
 }
 
@@ -9,6 +9,13 @@ const type = null;
 const apps = [
   {id: 0, type: "app", category: 0, folderName: "qr-code-scanner-0", name: "QR Code Scanner", img: ""},
   {id: 1, type: "app", category: 0, folderName: "imc-calculator-1", name: "IMC Calculator", img: ""},
+  {id: 2, type: "app", category: 0, folderName: "bussola-2", name: "Bussola", img: ""},
+  {id: 3, type: "app", category: 0, folderName: "voice-modifier-3", name: "Voice Modifier", img: ""},
+  {id: 4, type: "app", category: 0, folderName: "youtube-downloader-4", name: "Youtube Downloader", img: ""},
+  {id: 5, type: "app", category: 0, folderName: "text-to-speach-5", name: "Text to Speach", img: ""},
+  {id: 6, type: "app", category: 0, folderName: "share-position-6", name: "Share position", img: ""},
+  {id: 7, type: "app", category: 0, folderName: "qr-code-generator-7", name: "QR Code Generator", img: ""},
+  {id: 8, type: "app", category: 0, folderName: "color-identifier-7", name: "Color identifier", img: ""},
 ];
 
 let limit = 9;
@@ -81,7 +88,7 @@ $("#btn-filter").click(() => {
   $("nav").css({display: navShown ? "flex" : "none"});
 });
 
-document.getElementById("slider-container").addEventListener("click", e => {
+$("#slider-container").on("click", e => {
   if(e.target.id === "slider-container") {
     $("#slider-container").fadeOut(700);
     $("#slider").animate({left: "-75%"}, 500, ()=> {
@@ -92,10 +99,21 @@ document.getElementById("slider-container").addEventListener("click", e => {
 $(".tab").click((e) => {
   const id = e.target.id;
   if(["tab-1", "icon-tab-1", "label-tab-1"].includes(id)) {
-    $("#label-tab-2").css({"color": "#000000"})
+    $("#label-tab-2").css({"color": "#999"})
     $("#label-tab-1").css({"color": config.colors.primary})
   } else {
-    $("#label-tab-1").css({"color": "#000000"})
+    $("#label-tab-1").css({"color": "#999"})
     $("#label-tab-2").css({"color": config.colors.primary})
+  }
+});
+
+
+
+$(document).on("scroll", e => {
+  const t = $(document).scrollTop();
+  if(t > 0) {
+    $("header").css({"box-shadow": "1px 1px 1px #eee"})
+  } else {
+    $("header").css({"box-shadow": "none"})
   }
 });
