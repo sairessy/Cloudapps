@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="css/index.css">
   <title>Cloudapps</title>
 </head>
 <body>
   <header>
-    <div id="header">
-      <p id="title">Cloudapps</p>
-      <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
+    <div id="form-search">
+      <div id="input-container">
+        <input id="input-search" type="search" placeholder="Procurar aplicativos" />
+        <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
+      </div>
+      <nav>
+        <span>Todos</span>
+        <span>Produtividade</span>
+        <span>Utilitários</span>
+        <span>Entretenimento</span>
+      </nav>
     </div>
-   
   </header>
-  <div id="form-search">
-    <input id="input-search" type="search" placeholder="Procurar applicativos" />
-  </div>
+
   <main>  
     <div id="apps"></div>
     <button id="btn-more">Mais</button> 
@@ -25,12 +31,23 @@
 
   <div id="slider-container">
     <div id="slider">
-      <div id="links-1">
-        <a href="#">Submeter App</a>
-        <a href="#">Doar</a>
+      <p id="title">Cloudapps</p>
+      <div id="links-1" class="links">
+        <a href="#"><img src="assets/img/home-solid.svg" alt=""><span>Página inicial</span></a>
+        <a href="#"><img src="assets/img/plus-solid.svg" alt=""><span>Submeter aplicativo</span></a>
+        <a href="#"><img src="assets/img/heart.svg" alt=""><span>Doar</span></a>
+      </div>
+      <div id="links-2" class="links">
+        <a href="#"><img src="assets/img/cog-solid.svg" alt=""><span>Definições</span></a>
+        <a href="#"><img src="assets/img/sun.svg" alt=""><span>Tema escuro</span></a>
+      </div>
+      <div id="links-3" class="links">
+        <a href="#"><img src="assets/img/info-solid.svg" alt=""><span>Ajuda</span></a>
+        <a href="#"><img src="assets/img/box-solid.svg" alt=""><span>Feedback</span></a>
       </div>
     </div>
   </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>

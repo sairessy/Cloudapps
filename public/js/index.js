@@ -1,13 +1,12 @@
 const apps = [
-  {id: 0, folderName: "share-position", name: "Share Position", img: ""},
-  {id: 1, folderName: "unit-conversor", name: "Unit Conversor", img: ""}
+  {id: 0, folderName: "qr-code-scanner-0", name: "QR Code Scanner", img: ""},
 ];
 
 let limit = 9;
 const limitIncrement = limit;
 
 const openUrl = (id) => {
-  window.location.href = "/app/share-position/";
+  window.location.href = `/app/${id}`;
 }
 
 const App = (id, name, img) => {
@@ -69,11 +68,16 @@ document.getElementById("input-search").addEventListener("keyup", (e) => {
 });
 
 document.getElementById("btn-menu").addEventListener("click", () => {
-  document.getElementById("slider-container").style.left = 0;
+  $("#slider-container").fadeIn()
+  $("#slider").animate({left: "0"}, 500, ()=> {
+    // $("#slider-container").css({"background-color": "#0000007c"});
+  });
 });
 
 document.getElementById("slider-container").addEventListener("click", e => {
   if(e.target.id === "slider-container") {
-    document.getElementById("slider-container").style.left = "-100%";
+    $("#slider-container").fadeOut(700);
+    $("#slider").animate({left: "-75%"}, 500, ()=> {
+    });
   }
 });

@@ -5,6 +5,10 @@ app.listen(5000, () => {
   console.log("yey");
 });
 
-app.get("/app/share-position", (req, res) => {
-  res.sendFile(__dirname + "/public/apps/" + "share-position/share-position.html");
+// Main App
+
+
+// Apps
+app.get("/app/0", (req, res) => {
+  res.json({});
 });
