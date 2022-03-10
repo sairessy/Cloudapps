@@ -1,5 +1,9 @@
+:root {
+  --primary-color: blue;
+}
+
 body {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 
 a {
@@ -10,7 +14,7 @@ a {
 header {
   position: sticky;
   top: 0;
-  border: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 #form-search {
@@ -29,26 +33,30 @@ header {
 .header-buttons {
   display: flex;
   align-items: center;
-  width: 105px;
-  justify-content: space-between;
+  width: 35px;
+  /* justify-content: space-between; */
   justify-content: flex-end;
   padding: 0 10px;
 }
-#input-container #btn-menu {
+
+#btn-menu,
+#btn-filter,
+#btn-bookmark {
   cursor: pointer;
 }
 
-#btn-filter {
-  cursor: pointer;
+#btn-bookmark {
   display: none;
 }
 
-#btn-menu:active {
-  opacity: 0.7;
+#btn-filter {
+  display: none;
 }
 
-#title {
-  font-size: 22px;
+#btn-menu:active,
+#btn-filter:active,
+#btn-bookmark:active {
+  opacity: 0.7;
 }
 
 input {
@@ -67,7 +75,6 @@ input {
 }
 
 nav {
-  display: flex;
   overflow-x: hidden;
   background-color: #fff;
   display: none;
@@ -84,17 +91,42 @@ nav span:nth-child(2) {
 
 button {
   cursor: pointer;
-  padding: 15px;
+  padding: 7px;
   outline: none;
-  border: none;
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: #fff;
   border: 1px solid #ddd;
-  display: block;
   width: calc(100% - 20px);
   margin: 10px auto;
   box-shadow: 0 0 2px 2px #fcfcfc;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+button img {
+  animation: downanm 3s 1s infinite;
+}
+
+@keyframes downanm {
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+button span {
+  background-color: #ccc;
+  height: 100%;
+}
+
+/* button img {
+  margin-right: 10px;
+} */
 
 #apps {
   padding: 0 5px;
@@ -185,6 +217,23 @@ button {
   display: none;
 }
 
+#logo-title {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+#logo {
+  margin-right: 10px;
+  display: none;
+}
+
+#title {
+  color: #666;
+  font-weight: 600;
+  font-size: 22px;
+}
+
 #slider {
   position: fixed;
   left: -75%;
@@ -192,12 +241,6 @@ button {
   width: 75%;
   height: 100vh;
   overflow-y: scroll;
-}
-
-#slider #title {
-  padding: 10px;
-  color: #666;
-  font-weight: 600;
 }
 
 .links {
@@ -211,6 +254,7 @@ button {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  color: #666;
 }
 
 .links a img {

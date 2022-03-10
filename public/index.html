@@ -13,9 +13,9 @@
   <header>
     <div id="form-search">
       <div id="input-container">
-        <input id="input-search" type="search" placeholder="Pesquisar jogos e apps" />
+        <input id="input-search" type="search" placeholder="Pesquisar aplicativos" />
         <div class="header-buttons">
-          <!-- <img src="assets/img/bookmark.svg" width="20" height="20" alt="bars" id="btn-bookmark"> -->
+          <img src="assets/img/bookmark-solid.svg" width="20" height="20" alt="bars" id="btn-bookmark">
           <img src="assets/img/filter-solid.svg" width="20" height="20" alt="bars" id="btn-filter">
           <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
         </div>
@@ -32,7 +32,9 @@
 
   <main>  
     <div id="apps"></div>
-    <button id="btn-more">Mostrar mais</button> 
+    <button id="btn-more">
+      <img src="assets/img/angle-down-solid.svg" width="20" height="20" alt=""> 
+    </button>
   </main>
 
   <div id="bottom-navigation">
@@ -48,7 +50,7 @@
 
   <div id="slider-container">
     <div id="slider">
-      <p id="title">Cloudapps</p>
+      <div id="logo-title"><img src="assets/img/logo.png" alt="logo" id="logo" width="20" height="20"><p id="title">Cloudapps</p></div>
       <div id="links-1" class="links">
         <a href="/"><img src="assets/img/home-solid.svg" alt=""><span>Página inicial</span></a>
         <a href="#"><img src="assets/img/user.svg" alt=""><span>Meu perfil</span></a>
@@ -67,6 +69,7 @@
       </div>
     </div>
   </div>
+
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/index.js"></script>
 </body>
