@@ -18,7 +18,7 @@ app.get("/submitapp", (req, res) => {
 });
 
 // Requests
-app.post("/uploadapp", (err, data) => {
+app.post("/uploadapp", (req, res) => {
   const data = req.body;
   res.json({});
 });
