@@ -4,23 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/img/cloudapps-logo-alt.png" type="image/x-icon">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/index.css">
   <title>Cloudapps</title>
 </head>
 <body>
   <header>
+    <div class="header-buttons">
+      <img src="assets/img/bookmark-solid.svg" width="20" height="20" alt="bars" id="btn-bookmark">
+      <img src="assets/img/filter-solid.svg" width="20" height="20" alt="bars" id="btn-filter">
+      <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
+    </div>
+    <div id="logo-title">
+      <img src="assets/img/cloudapps-logo-alt.png" alt="logo" id="logo" width="20" height="20">
+      <p id="title">Cloudapps</p>
+    </div>
     <div id="form-search">
       <div id="input-container">
-        <input id="input-search" type="search" placeholder="Pesquisar aplicativos" />
-        <div class="header-buttons">
-          <img src="assets/img/bookmark-solid.svg" width="20" height="20" alt="bars" id="btn-bookmark">
-          <img src="assets/img/filter-solid.svg" width="20" height="20" alt="bars" id="btn-filter">
-          <img src="assets/img/bars-solid.svg" width="20" height="20" alt="bars" id="btn-menu">
-        </div>
+        <input id="input-search" type="search" placeholder="Pesquisar apps e jogos" />
+        <img src="assets/img/arrow-right-solid.svg" width="20" height="20" alt="close-search" id="btn-close-search">
       </div>
     </div>
+    
     <nav id="nav">
       <span>Todos</span>
       <span>Produtividade</span>
@@ -38,24 +44,27 @@
   </main>
 
   <div id="bottom-navigation">
-    <div class="tab" id="tab-1">
-      <img src="assets/img/gamepad-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-1">
-      <span class="label" id="label-tab-1">Jogos</span>
-    </div>
-    <div class="tab" id="tab-2">
-      <img src="assets/img/square-root-alt-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-2">
-      <span class="label" id="label-tab-2">Apps</span>
-    </div>
+    <a href="#" class="tab" id="tab-1">
+      <img src="assets/img/square-root-alt-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-1">
+      <span class="label" id="label-tab-1">Apps</span>
+    </a>
+    <a href="#" class="tab" id="tab-2">
+      <img src="assets/img/gamepad-solid.svg" width="15" height="15" alt="" class="icon" id="icon-tab-2">
+      <span class="label" id="label-tab-2">Jogos</span>
+    </a>
   </div>
 
   <div id="slider-container">
     <div id="slider">
-      <div id="logo-title"><img src="assets/img/logo.png" alt="logo" id="logo" width="20" height="20"><p id="title">Cloudapps</p></div>
+      <div id="logo-title">
+        <img src="assets/img/cloudapps-logo-alt.png" alt="logo" id="logo" width="20" height="20">
+        <p id="title">Cloudapps</p>
+      </div>
       <div id="links-1" class="links">
         <a href="/"><img src="assets/img/home-solid.svg" alt=""><span>Página inicial</span></a>
         <a href="#"><img src="assets/img/user.svg" alt=""><span>Meu perfil</span></a>
         <a target="_blank" href="/submitappguide"><img src="assets/img/plus-solid.svg" alt=""><span>Submeter aplicativo</span></a>
-        <a href="#"><img src="assets/img/heart.svg" alt=""><span>Doar</span></a>
+        <a href="#"><img src="assets/img/heart.svg" alt=""><span>Apoie</span></a>
       </div>
       <div id="links-2" class="links">
         <a href="#"><img src="assets/img/cog-solid.svg" alt=""><span>Definições</span></a>

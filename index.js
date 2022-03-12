@@ -32,6 +32,10 @@ app.get("/app/0", (req, res) => {
   res.json({});
 });
 
+app.get("/app/10", (req, res) => {
+  res.sendFile(__dirname + "/public/apps/kittens-curiosities-10/index.html");
+});
+
 app.get("/app/1", (req, res) => {
   res.sendFile(__dirname + "/public/apps/imc-calculator-1/index.html");
 });

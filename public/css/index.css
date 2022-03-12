@@ -1,9 +1,9 @@
 :root {
-  --primary-color: blue;
+  --primary-color: #2bccb1;
 }
 
 body {
-  /* padding-bottom: 60px; */
+  background-color: #f9f9f9;
 }
 
 a {
@@ -14,18 +14,25 @@ a {
 header {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-between;
 }
 
 #form-search {
   display: flex;
   flex-direction: column;
-  background-color: #f9f9f9;
-  background-color: #fff;
+  /* flex: 1; */
+  /* background-color: #ddd; */
+  width: 45px;
+  overflow-x: hidden;
 }
 
 #input-container {
   display: flex;
+  align-items: center;
   position: relative;
   padding: 5px;
 }
@@ -34,7 +41,6 @@ header {
   display: flex;
   align-items: center;
   width: 35px;
-  /* justify-content: space-between; */
   justify-content: flex-end;
   padding: 0 10px;
 }
@@ -51,6 +57,10 @@ header {
 
 #btn-filter {
   display: none;
+}
+
+#btn-close-search {
+  padding: 20px;
 }
 
 #btn-menu:active,
@@ -70,8 +80,10 @@ input {
   font-size: 16px;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
+  color: #666;
   flex: 1;
+  cursor: pointer;
 }
 
 nav {
@@ -89,16 +101,22 @@ nav span:nth-child(2) {
   border-bottom: 1px solid #000;
 }
 
+main {
+  background-color: #f9f9f9;
+  background-color: #fff;
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+
 button {
   cursor: pointer;
-  padding: 7px;
+  padding: 10px;
   outline: none;
   border-radius: 7px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   width: calc(100% - 20px);
   margin: 10px auto;
-  box-shadow: 0 0 2px 2px #fcfcfc;
+  box-shadow: 0 0 2px 2px #f9f9f9;
   background-color: var(--primary-color);
   color: #fff;
   display: flex;
@@ -124,10 +142,6 @@ button span {
   height: 100%;
 }
 
-/* button img {
-  margin-right: 10px;
-} */
-
 #apps {
   padding: 0 5px;
   display: grid;
@@ -150,20 +164,24 @@ button span {
   background-size: 50px;
   background-repeat: no-repeat;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .app .cover:active {
   box-shadow: none;
 }
 
-.app p {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
+.app .title {
+  padding: 5px;
   height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.app p {
+  text-align: center;
+  font-size: 14px;
   color: #666;
 }
 
@@ -181,7 +199,6 @@ button span {
   width: 100%;
   background-color: #fff;
   box-shadow: 1px -1px 1px #eee;
-  display: none;
 }
 
 #bottom-navigation .tab {
@@ -225,7 +242,6 @@ button span {
 
 #logo {
   margin-right: 10px;
-  display: none;
 }
 
 #title {
@@ -255,6 +271,7 @@ button span {
   display: flex;
   align-items: center;
   color: #666;
+  font-size: 16px;
 }
 
 .links a img {

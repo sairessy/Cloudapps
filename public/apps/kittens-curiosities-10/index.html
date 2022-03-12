@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kittens Curiosities</title>
+  <style>
+    @font-face {
+      src: url(../../assets/fonts/RobotoCondensed-Regular.ttf);
+      font-family: rbt;
+    }
+
+    * {
+      font-family: rbt;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    #buttons > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      width: 100px;
+    }
+
+    #buttons button {
+      padding: 10px;
+      border-radius: 25px;
+      color: #fff;
+      background-color: #2bccb1;
+      border: none;
+      outline: none;
+      width: 100%;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    #curiosity-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 7px;
+      height: 200px;
+      margin-top: 10px;
+      position: relative;
+    }
+    
+    #btn-copy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #btn-copy:active {
+      opacity: .7;
+    }
+
+    button:active {
+      opacity: .8;
+    }
+
+    @media screen and (min-width: 414px) {
+      body {
+        width: 70%;
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="curiosity-container">
+    <img src="../../assets/img/copy-solid.svg" width="20" height="20" alt="btn-copy" id="btn-copy">
+    <p id="curiosity"></p>
+  </div>
+
+  <div id="buttons">
+    <div id="left"><button id="btn-previous">Previous</button></div>
+    <div id="center"><button id="btn-random">Random</button></div>
+    <div id="right"><button id="btn-next">Next</button></div>
+  </div>
+
+  <script>
+    let cur = 0;
+
+    const curs = [{id: 0, text: "The text 0"}, {id: 1, text: "The text 1"}];
+
+    document.getElementById("curiosity").innerText = curs[cur].text;
+
+    document.getElementById("btn-previous").addEventListener("click", () => {
+      if(cur > 0) {
+        cur--;
+        document.getElementById("curiosity").innerText = curs[cur].text;
+      }
+    });
+
+    document.getElementById("btn-next").addEventListener("click", () => {
+      if(cur < curs.length - 1) {
+        cur++;
+        document.getElementById("curiosity").innerText = curs[cur].text;
+      }
+    });
+
+    document.getElementById("btn-random").addEventListener("click", () => {
+      let r = Math.round(Math.random() * (curs.length - 1));
+      
+      while (r === cur) {
+        r = Math.round(Math.random() * (curs.length - 1));
+      }
+
+      cur = r;
+      document.getElementById("curiosity").innerText = curs[cur].text;
+    });
+  </script>
+</body>
+</html>
