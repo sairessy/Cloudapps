@@ -47,7 +47,7 @@
 <body>
   <form id="submit-app">
     <input type="file" id="file">
-    <button>Submeter</button>
+    <button id="btn-submit">Submeter</button>
   </form>
 
   <script>
@@ -63,7 +63,8 @@
       }
 
       const size = file.size;
-      const ext = file.name.split(".")[1];
+      const arr = file.name.split(".");
+      const ext = arr[arr.length - 1];
 
       if(size > maxSize) {
         alert(`O tamanho máximo sumportado é ${(maxSize / 1024000).toFixed(2)} Mb's!`);
@@ -75,20 +76,29 @@
         return;
       }
 
-      console.log(ext, size);
+      document.getElementById("btn-submit").style.display = "inline-block";
 
-      // const res = await fetch("/uploadapp", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(data)
-      // });
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = async () => {
+        const data = {
+          size, ext, base64: reader.result
+        }
+        
+        const res = await fetch("/uploadapp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
 
-      // const json = await res.json();
-      // console.log(json);
+        const json = await res.json();
+        console.log(json);
 
-      // alert("Obrigado pela sua contribuição a sua aplicação será avaliada");
+        alert("Obrigado pela sua contribuição a sua aplicação será avaliada!");
+        document.getElementById("btn-submit").style.display = "inline-block";
+      }
     });
   </script>
 </body>

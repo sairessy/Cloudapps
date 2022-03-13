@@ -8,8 +8,8 @@ let type = null;
 
 const apps = [
   {id: 0, type: "0", category: 0, folderName: "qr-code-scanner-0", name: "QR Code Scanner", img: "", desc: ""},
-  {id: 1, type: "0", category: 0, folderName: "imc-calculator-1", name: "IMC Calculator", img: "", desc: ""},
-  {id: 2, type: "0", category: 0, folderName: "bussola-2", name: "Bussola", img: "", desc: ""},
+  {id: 1, type: "0", category: 0, folderName: "imc-calculator-1", name: "Calculadora de IMC", img: "", desc: ""},
+  {id: 2, type: "0", category: 0, folderName: "bussola-2", name: "Bússola", img: "", desc: ""},
   {id: 3, type: "0", category: 0, folderName: "voice-modifier-3", name: "Voice Modifier", img: "", desc: ""},
   {id: 4, type: "0", category: 0, folderName: "youtube-downloader-4", name: "Youtube Downloader", img: "", desc: ""},
   {id: 5, type: "0", category: 0, folderName: "text-to-speach-5", name: "Text to Speach", img: "", desc: ""},
@@ -26,6 +26,7 @@ const apps = [
   {id: 16, type: "0", category: 0, folderName: "famous-identifier-16", name: "Famous identifier", img: "", desc: ""},
   {id: 17, type: "0", category: 0, folderName: "music-identifier-17", name: "Music identifier", img: "", desc: ""},
   {id: 18, type: "0", category: 0, folderName: "desenho-18", name: "Desenho", img: "", desc: ""},
+  {id: 19, type: "0", category: 0, folderName: "network-spped-tester-19", name: "Natwork Speed Tester", img: "", desc: ""},
 ];
 
 let limit = 9;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps</title>
+  <style>
+    @font-face {
+      src: url(assets/fonts/RobotoCondensed-Regular.ttf);
+      font-family: rbt;
+    }
+
+    * {
+      font-family: rbt;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="apps">
+
+  </div>
+</body>
+
+<script>
+  getApps();
+
+  async function getApps() {
+    const res = await fetch("/apps");
+    const json = await res.json();
+    if(json.length > 0) {
+      let apps = "";
+      json.forEach(app => {
+        apps += `<a href="#" download="${app.base64}">${app.time}</a>`
+      });
+      document.getElementById("apps").innerHTML = apps;
+    }
+  }
+</script>
+</html>

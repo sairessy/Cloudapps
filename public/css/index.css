@@ -42,7 +42,7 @@ header {
   align-items: center;
   width: 35px;
   justify-content: flex-end;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
 
 #btn-menu,
@@ -60,7 +60,7 @@ header {
 }
 
 #btn-close-search {
-  padding: 20px;
+  padding: 20px 10px;
 }
 
 #btn-menu:active,
@@ -257,6 +257,7 @@ button span {
   width: 75%;
   height: 100vh;
   overflow-y: scroll;
+  padding-bottom: 20px;
 }
 
 .links {
